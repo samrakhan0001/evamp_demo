@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment/api_helper/api_controllers/login_controller.dart';
 import 'package:flutter_assignment/resources/colors.dart';
 
 class Login_Screen extends StatefulWidget {
@@ -16,6 +17,8 @@ class _Login_ScreenState extends State<Login_Screen> {
 
   final GlobalKey<FormFieldState> _emailFormKey = GlobalKey<FormFieldState>();
   final GlobalKey<FormFieldState> _passFormKey = GlobalKey<FormFieldState>();
+
+  Login_Controller login_controller = Login_Controller();
 
 
 
@@ -197,7 +200,8 @@ class _Login_ScreenState extends State<Login_Screen> {
         child: Text("Login",style: TextStyle(fontSize: 20),),
         onPressed: () {
           if(_isFormValid()){
-
+            login_controller.callingLoginApi(context: context,useremail: email_controller.text.trim().toString(),
+            password: password_controller.text.trim().toString());
           }
         },
         style: ElevatedButton.styleFrom(

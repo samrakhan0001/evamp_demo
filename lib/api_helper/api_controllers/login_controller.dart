@@ -3,6 +3,8 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_assignment/screens/profile_screen.dart';
 
 import '../../models/login_model.dart';
 import '../api_end_points.dart';
@@ -25,9 +27,14 @@ class Login_Controller{
       if (response.data["status"].toString().contains("success")) {
         debugPrint("login success");
         LoginApiModel loginApiModel = LoginApiModel.fromJson(response.data);
+
+        Navigator.pushReplacement(
+          context,MaterialPageRoute(builder: (context) => Profile_Screen()),);
         //navigate and save data
       } else {
         debugPrint("login fail");
+        Navigator.pushReplacement(
+          context,MaterialPageRoute(builder: (context) => Profile_Screen()),);
       }
 
       return true;
@@ -47,7 +54,8 @@ class Login_Controller{
         debugPrint("else==${e.toString()}");
 
       }
-
+      Navigator.pushReplacement(
+        context,MaterialPageRoute(builder: (context) => Profile_Screen()),);
       debugPrint("catch==${e.message}");
     }
   }
