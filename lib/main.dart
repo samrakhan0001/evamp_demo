@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment/screens/items_list_screen.dart';
 import 'package:flutter_assignment/screens/login_screen.dart';
 import 'package:flutter_assignment/screens/profile_screen.dart';
 import 'package:get/get.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:Login_Screen(),
+      home:Items_List_Screen(),
     );
   }
 }

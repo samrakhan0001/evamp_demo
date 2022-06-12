@@ -21,17 +21,3 @@ Widget top_bar(BuildContext context,text){
     ),
   );
 }
-
-class ItemData {
-  ItemData(this.title, this.key);
-
-  final String title;
-
-  // Each item in reorderable list needs stable and unique key
-  final Key key;
-}
-
-enum DraggingMode {
-  iOS,
-  android,
-}
